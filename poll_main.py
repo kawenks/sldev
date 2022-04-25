@@ -1,6 +1,6 @@
 import streamlit as st
 from tally_selector import MultiApp
-from displays import president, vicepresident, senators, phototest # import your app modules here
+from displays import president, vicepresident, senators # import your app modules here
 
 app = MultiApp()
 
