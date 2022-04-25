@@ -45,11 +45,13 @@ def aggrid_interactive_table(df: pd.DataFrame, HideCols=None):
 def init_connection():
     return pymongo.MongoClient(**st.secrets["mongo"])
 
+@st.experimental_memo(ttl=300)
 def get_tally(_db, view):
     df = pd.DataFrame(list(_db[view].find()))
     df = df.rename(columns={"_id":"Candidate","total_votes":"Votes"})
     return df
 
+@st.experimental_memo(ttl=300)
 def get_rawdata(_db, view, filter=None):
     df = pd.DataFrame(list(_db[view].find(filter)))
     return df
