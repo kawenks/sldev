@@ -15,7 +15,7 @@ This site displays aggregated results of ***independently recorded (i.e. unoffic
 # Add all your application here
 app.add_app("President", president.app)
 app.add_app("Vice President", vicepresident.app)
-app.add_app("Senators", senators.app)
+#app.add_app("Senators", senators.app)
 
 # The main app
 app.run()
