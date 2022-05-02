@@ -29,7 +29,7 @@ def aggrid_interactive_table(df: pd.DataFrame, HideCols=None):
     options.configure_selection("single")
     selection = AgGrid(
         df,
-        enable_enterprise_modules=False,
+        enable_enterprise_modules=True,
         gridOptions=options.build(),
         theme="dark",
         pagination=True,
