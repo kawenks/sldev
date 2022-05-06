@@ -57,7 +57,7 @@ def get_rawdata(_db, view, filter=None):
     return df
 
 def get_photos(_fs, interview_key):
-    return _fs.find({'interview_key': interview_key})
+    return _fs.find({'interview_key': interview_key}).limit(1)
 
 def get_one(_db, view, filter=None):
     df = _db[view].find_one(filter)
