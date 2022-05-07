@@ -1,6 +1,6 @@
 import streamlit as st
 from tally_selector import MultiApp
-from displays import president, vicepresident, senators # import your app modules here
+from displays import president, vicepresident, pivot # import your app modules here
 
 app = MultiApp()
 
@@ -15,7 +15,7 @@ This site displays aggregated results of ***independently recorded (i.e. unoffic
 # Add all your application here
 app.add_app("President", president.app)
 app.add_app("Vice President", vicepresident.app)
-#app.add_app("Senators", senators.app)
+app.add_app("Summary", pivot.app)
 
 # The main app
 app.run()
