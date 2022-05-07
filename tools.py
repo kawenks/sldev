@@ -57,7 +57,14 @@ def get_rawdata(_db, view, filter=None):
     return df
 
 def get_photos(_fs, interview_key):
-    return _fs.find({'interview_key': interview_key}).limit(1)
+    images = []
+    fn = []
+    for i in _fs.find({'interview_key': interview_key}):
+        if i.filename not in fn:
+            images.append(i)
+            fn.append(i.filename)
+
+    return images
 
 def get_one(_db, view, filter=None):
     df = _db[view].find_one(filter)
