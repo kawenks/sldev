@@ -31,7 +31,7 @@ def app():
         pres_bgy = pd.pivot_table(raw_df, values='Votes', index=['Province','Municipality', 'Barangay'], columns='Candidate', aggfunc=np.sum )
         st.table(pres_bgy)
 
-    st.subheader('Presidential Tally by Province')
+    st.subheader('Vice-Presidential Tally by Province')
     raw_df_vp  = tools.get_rawdata(db,'view_rawdata_vicepresident')
     vpres_pv = pd.pivot_table(raw_df_vp, values='Votes', index=['Province'], columns='Candidate', aggfunc=np.sum)
     st.table(vpres_pv)
